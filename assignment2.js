@@ -60,8 +60,23 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   };
   
   // REDUCE //
-  Array.prototype.myReduce = function(callbackFn) {
-    // Place your code here.
+  Array.prototype.myReduce = function(callbackFn, num) {
+      let total = 0;
+      let holdThis = 0;
+
+      if(num != undefined) {
+          total = num;
+      }
+      else {
+          total = this[0];
+          holdThis++;
+      }
+
+      for(let i = 0; i < this.length; i++) {
+          total = callbackFn(total, this[i], i, this);
+      }
+
+      return total;
   };
   
   // INCLUDES //
