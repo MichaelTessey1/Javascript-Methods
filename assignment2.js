@@ -168,5 +168,10 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   
   // VALUES //
   Object.myValues = function(object) {
-    // Place your code here.
+    let randomArray = [];
+      for(i in object) {
+          randomArray.push(object[i]);
+      }
+
+      return randomArray;
   };
