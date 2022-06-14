@@ -81,7 +81,15 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   
   // INCLUDES //
   Array.prototype.myIncludes = function(searchElement) {
-    // Place your code here.
+      let elementFound = false;
+
+      for(let i = 0; i < this.length; i++) {
+          if(this[i] === searchElement) {
+              elementFound = true;
+          }
+      }
+
+      return elementFound;
   };
   
   // INDEXOF //
