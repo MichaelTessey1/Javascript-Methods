@@ -158,7 +158,12 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   
   // KEYS //
   Object.myKeys = function(object) {
-    // Place your code here.
+      let randomArray = [];
+      for(i in object) {
+          randomArray.push(i);
+      }
+
+      return randomArray;
   };
   
   // VALUES //
