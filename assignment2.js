@@ -21,21 +21,29 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   
   // FILTER //
   Array.prototype.myFilter = function(callbackFn) {
-      let randomArray = [];
+    let randomArray = [];
 
-      for(let i = 0; i < this.length; i++) {
-          let holdThis = callbackFn(this[i]. i, this);
-          if (holdThis === true) {
-              randomArray.push(this[i]);
-          }
-      }
+    for(let i = 0; i < this.length; i++) {
+        let holdThis = callbackFn(this[i]. i, this);
+        if (holdThis === true) {
+           randomArray.push(this[i]);
+        }
+    }
 
-      return randomArray;
+    return randomArray;
   };
   
   // SOME //
   Array.prototype.mySome = function(callbackFn) {
-    // Place your code here.
+    for(let i = 0; i < this.length; i++) {
+        let holdThis = callbackFn(this[i], i, this)
+        if(holdThis === true) {
+             break;
+        } 
+        
+    }
+
+    return holdThis;
   };
   
   // EVERY //
