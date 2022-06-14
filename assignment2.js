@@ -48,7 +48,15 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   
   // EVERY //
   Array.prototype.myEvery = function(callbackFn) {
-    // Place your code here.
+    for(let i = 0; i < this.length; i++) {
+        let holdThis = callbackFn(this[i], i, this)
+        if(holdThis === false) {
+             break;
+        } 
+        
+    }
+
+    return holdThis;
   };
   
   // REDUCE //
