@@ -125,8 +125,35 @@ In this Assignment, we use the prototype constructor to add new methods to the A
   };
   
   // LASTINDEXOF //
-  Array.prototype.myLastIndexOf = function(searchElement) {
-    // Place your code here.
+  Array.prototype.myLastIndexOf = function(searchElement, num) {
+      let index = -1;
+
+      if(num === undefined) {
+          for(let i = this.length-1; i > -1; i--) {
+              if(this[i] === searchElement) {
+                  index = i;
+                  break;
+              }
+          }
+      }
+      else if (num < 0) {
+          for(let i = this.length + num; i > -1; i--) {
+              if(this[i] === searchElement) {
+                  index = i;
+                  break;
+              }
+          }
+      }
+      else {
+          for(let i = this.length-1; i > -1; i++) {
+              if(this[i] === searchElement) {
+                  index = i;
+                  break;
+              }
+          }
+      }
+
+      return index;
   };
   
   // KEYS //
